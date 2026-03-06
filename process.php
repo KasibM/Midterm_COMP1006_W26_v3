@@ -10,10 +10,10 @@
     }
 
     //sanitise input
-    $title = trim(filter_input(INPUT_POST, '',FILTER_SANITIZE_SPECIAL_CHARS));
-    $author = trim(filter_input(INPUT_POST, '',FILTER_SANITIZE_SPECIAL_CHARS));
-    $rating = trim(filter_input(INPUT_POST, '',FILTER_SANITIZE_SPECIAL_CHARS));
-    $review_text = trim(filter_input(INPUT_POST, '',FILTER_SANITIZE_SPECIAL_CHARS));
+    $title = trim(filter_input(INPUT_POST, 'title',FILTER_SANITIZE_SPECIAL_CHARS));
+    $author = trim(filter_input(INPUT_POST, 'author',FILTER_SANITIZE_SPECIAL_CHARS));
+    $rating = trim(filter_input(INPUT_POST, 'rating',FILTER_SANITIZE_SPECIAL_CHARS));
+    $review_text = trim(filter_input(INPUT_POST, 'review_text',FILTER_SANITIZE_SPECIAL_CHARS));
 
     //vallidation
 
