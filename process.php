@@ -30,7 +30,7 @@
     if($rating === null || $rating === ''){
         $errors[] = "rating is required.";
     } else if (!filter_var($rating, FILTER_VALIDATE_INT)){
-        $errors[] = "rating must be an integer."
+        $errors[] = "rating must be an integer.";
     } else if (!($rating > 0 && $rating < 6)){
         $errors[] = "rating must be a number from 1 to 6.";
     }
@@ -67,6 +67,8 @@
 
     //close connection
     $_pdo = null;
+
+
 
 
 
