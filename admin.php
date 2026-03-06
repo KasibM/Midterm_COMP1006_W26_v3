@@ -38,6 +38,7 @@ $reviews = $stmt->fetchALL();
                 <th>Rating</th>
                 <th>Review</th>
                 <th>Date Created</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -62,18 +63,20 @@ $reviews = $stmt->fetchALL();
                         <!-- converts YYYY-MM-DD to Month (short) day, year -->
                         <?= htmlspecialchars(date("M d, Y", strtotime($review['created_at']))); ?>
                     </td>
+                    <td>
                     <a
-                        class="btn btn-sm btn-warning"
+                        class="btn btn-secondary"
                         href="update.php?id=<?= urlencode($review['id']); ?>">
                         Update
                     </a>
+
                     <a
-                        class="btn btn-sm btn-danger mt-2"
+                        class="btn btn-secondary"
                         href="delete.php?id=<?= urlencode($review['id']); ?>"
                         onclick="return confirm('Please confirm deletion of this reveiw.');">
                         Delete
                     </a>
-                </td>
+                    </td>
                 </tr>
             <?php endforeach; ?>
         </tbody>
