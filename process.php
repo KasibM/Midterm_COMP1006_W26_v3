@@ -68,8 +68,19 @@
     //close connection
     $_pdo = null;
 
-
-
-
-
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>New Book Review</title>
+    </head>
+    <body>
+        <h1>New Book Review</h1>
+        <p>Book review for <?= $title ?> by <?=  $author ?> added </p>
+
+        <a href="index.php">Back</a>
+    </body>
+    
+</html>
