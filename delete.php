@@ -16,7 +16,7 @@
     $stmt->execute(); 
 
     //close connection
-    $pdo = null;
+    $_pdo = null;
 
     // send back to admin page 
     header("Location: admin.php"); 
