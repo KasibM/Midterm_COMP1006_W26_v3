@@ -38,7 +38,7 @@
     if($review_text === null || $review_text === ''){
         $errors[] = "review_text is required.";
     }
-    
+
     //if invalid list errors and exit code
     if (!empty($errors)) { ?>
     <p>Failed to insert data due to the following errors:</p>
@@ -49,6 +49,24 @@
     exit;
 }
 
+    //sql query with named placeholders
+    $sql = "INSERT INTO reviews (title, author, rating, review_text) VALUES (:title, :author, :rating, :review_text)";
+
+    //prepare (precompile) sql query
+    $stmt = $pdo->prepare($sql);
+
+    //map named placeholders
+
+    $stmt -> bindParam(':title', $title);
+    $stmt -> bindParam(':author', $author);
+    $stmt -> bindParam(':rating', $rating);
+    $stmt -> bindParam(':review_text', $review_text);
+
+    //execute the query
+    $stmt -> execute();
+
+    //close connection
+    $_pdo = null;
 
 
 
