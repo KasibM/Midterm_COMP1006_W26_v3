@@ -36,17 +36,20 @@
 
     <form action="update-process.php" method="POST">
     
+        <label for="title">ID:</label>
+        <input type="text" id="id" name="id" value="<?=  htmlspecialchars($review['id'])?>" readonly/>
+
         <label for="title">Book Title:</label>
-        <input type="text" id="title" name="title" placeholder="<?=  htmlspecialchars($review['title'])?>" />
+        <input type="text" id="title" name="title" value="<?=  htmlspecialchars($review['title'])?>" />
 
         <label for="author">Author:</label>
-        <input type="text" id="author" name="author" placeholder="<?=  htmlspecialchars($review['author'])?>" />
+        <input type="text" id="author" name="author" value="<?=  htmlspecialchars($review['author'])?>" />
 
         <label for="rating">Rating (1 to 5):</label>
-        <input type="number" id="rating" name="rating" min="1" max="5" placeholder="<?=  htmlspecialchars($review['rating'])?>" />
+        <input type="number" id="rating" name="rating" min="1" max="5" value="<?=  htmlspecialchars($review['rating'])?>" />
 
         <label for="review_text">Review:</label>
-        <textarea id="review_text" name="review_text" rows="6" cols="40" placeholder="<?=  htmlspecialchars($reveiew['review_text'])?>"></textarea>
+        <textarea id="review_text" name="review_text" rows="6" cols="40" value=""><?=  htmlspecialchars($review['review_text'])?></textarea>
 
         <button type="submit">Submit Changes</button>
 
