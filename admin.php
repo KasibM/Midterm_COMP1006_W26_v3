@@ -73,7 +73,7 @@ $reviews = $stmt->fetchALL();
                     <a
                         class="btn btn-secondary"
                         href="delete.php?id=<?= urlencode($review['id']); ?>"
-                        onclick="return confirm('Please confirm deletion of this reveiw.');">
+                        onclick="return confirm('Please confirm deletion of this review.');">
                         Delete
                     </a>
                     </td>
