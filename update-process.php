@@ -10,10 +10,12 @@
     }
 
     //sanitise input
+    
     $title = trim(filter_input(INPUT_POST, 'title',FILTER_SANITIZE_SPECIAL_CHARS));
     $author = trim(filter_input(INPUT_POST, 'author',FILTER_SANITIZE_SPECIAL_CHARS));
     $rating = trim(filter_input(INPUT_POST, 'rating',FILTER_SANITIZE_SPECIAL_CHARS));
     $review_text = trim(filter_input(INPUT_POST, 'review_text',FILTER_SANITIZE_SPECIAL_CHARS));
+    $id = trim(filter_input(INPUT_POST, 'id',FILTER_SANITIZE_SPECIAL_CHARS));
 
     //vallidation
 
@@ -50,7 +52,7 @@
 }
 
     //sql query with named placeholders
-    $sql = "UPDATE reviews set title = :title, author = :author, rating = :rating, review_text = :review_text WHERE id = :id";
+    $sql = "UPDATE reviews SET title = :title, author = :author, rating = :rating, review_text = :review_text WHERE id = :id";
 
     //prepare (precompile) sql query
     $stmt = $pdo->prepare($sql);
@@ -60,6 +62,7 @@
     $stmt -> bindParam(':author', $author);
     $stmt -> bindParam(':rating', $rating);
     $stmt -> bindParam(':review_text', $review_text);
+    $stmt -> bindParam(':id', $id);
 
     //execute the query
     $stmt -> execute();
